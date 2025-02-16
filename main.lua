@@ -1,3 +1,5 @@
+---@since 25.2
+
 ---@alias Yazi.tab.mode "select"|"unset"|"normal" cx.active.mode
 ---
 ---@class smart_visual.setup.Opts
