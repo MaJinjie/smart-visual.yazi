@@ -1,12 +1,14 @@
 # smart-visual.yazi
 
 This is a Yazi plugin that implements a visual mode switch similar to Vim.
+
 <!--toc:start-->
 - [smart-visual.yazi](#smart-visualyazi)
   - [Features](#features)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Configuration](#configuration)
+  - [License](#license)
 <!--toc:end-->
 
 ## Features
@@ -53,3 +55,7 @@ require("smart_visual").setup({
   persist_on_toggle = true, 
 })
 ```
+
+## License
+
+This plugin is MIT-licensed. For more information check the [LICENSE](https://github.com/MaJinjie/smart-visual.yazi/blob/main/LICENSE) file.
