@@ -1,4 +1,4 @@
----@since 25.2
+---@since 25.3.2
 
 ---@alias Yazi.tab.mode "select"|"unset"|"normal" cx.active.mode
 ---
@@ -40,19 +40,19 @@ function M.entry(self, job)
 	if action == "escape" then
 		-- In visual mode, cancel the current selection.
 		if mode ~= "normal" then
-			ya.manager_emit("visual_mode", { unset = not S.hovered_is_selected() })
-			ya.manager_emit("escape", { visual = true })
+			ya.mgr_emit("visual_mode", { unset = not S.hovered_is_selected() })
+			ya.mgr_emit("escape", { visual = true })
 		else
-			ya.manager_emit("escape", {})
+			ya.mgr_emit("escape", {})
 		end
 	else
 		-- When the current mode matches the applied mode, or when preserving the previous selection while toggling between select and unset.
 		if action == mode or opts.persist_on_toggle ~= false then
-			ya.manager_emit("escape", { visual = true })
+			ya.mgr_emit("escape", { visual = true })
 		end
 		-- When the current mode does not match the applied mode, switch immediately.
 		if action ~= mode then
-			ya.manager_emit("visual_mode", { unset = action == "unset" })
+			ya.mgr_emit("visual_mode", { unset = action == "unset" })
 		end
 	end
 end
